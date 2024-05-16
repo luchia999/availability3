@@ -1,0 +1,105 @@
+*{
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-family: sans-serif;
+	font-size: 15px;
+	line-height: 1.2;
+	width: 50%;
+	min-height: 50vh;
+  }
+
+  .menu-switch {
+	display: inline-block;
+    padding: 5px 20px;
+    border: 7px solid #0e0d0d;
+	height: 27px;
+	width: 90px;
+    background-color: #f4f0f0;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius:7px	
+}
+
+.checkbox-green {
+	display: inline-block;    
+	height: 28px;    
+	line-height: 28px;  
+	margin-right: 10px;      
+	position: relative;
+	vertical-align: middle;
+	font-size: 14px;
+	user-select: none;	
+}
+.checkbox-green .checkbox-green-switch {
+	display: inline-block;	
+	height: 28px;
+	width: 90px;
+	box-sizing: border-box;
+	position: relative;	
+	border-radius: 2px;
+	background: #848484;
+	transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1);
+}
+.checkbox-green .checkbox-green-switch:before {
+	content: attr(data-label-on);
+	display: inline-block;
+	box-sizing: border-box;		
+	width: 50px;	
+	border-radius: 7px;	
+	position: absolute;
+	top: 0;
+	left: 45px;	
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #19b026;
+	color: rgba(255, 254, 254, 0.988);
+	font-size: 10px;
+	line-height: 28px;
+}
+.checkbox-green .checkbox-green-switch:after {
+	content: attr(data-label-off);
+	display: inline-block;
+	box-sizing: border-box;	
+	width: 50px;	
+	border-radius: 7px;	
+	position: absolute;
+	top: 0px;
+	left: 0px;	
+	z-index: 5;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: white;
+	line-height: 26px;
+	font-size: 10px;
+	color: #090909;	
+	transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1);
+}
+.checkbox-green input[type="checkbox"] {
+	display: block;	
+	width: 0;
+	height: 0;	
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.checkbox-green input[type="checkbox"]:checked + .checkbox-green-switch:before {
+	content: attr(data-label-off);
+	left: 0;
+}
+.checkbox-green input[type="checkbox"]:checked + .checkbox-green-switch:after {
+	content: attr(data-label-on);
+	color: #121312;
+	transform: translate3d(44px, 0, 0);
+}
+
+.checkbox-green input[type="checkbox"]:not(:disabled) + .checkbox-green-switch:hover {
+	cursor: pointer;
+}
+.checkbox-green input[type="checkbox"]:not(:disabled) + .checkbox-green-switch:hover:after {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+
